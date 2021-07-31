@@ -1,0 +1,104 @@
+@media screen and (min-width: 600px) {
+
+    /* lay Page */
+	.lay-fullpage {
+		width: 55%;
+	}
+    .mdl-layout__drawer-button {
+        color: #fff;
+    }
+
+	.background {
+		-webkit-filter: brightness(0.6);
+		-ms-filter: brightness(0.6);
+		-moz-filter: brightness(0.6);
+		filter: brightness(0.6);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		background-size: cover;
+	}
+}
+
+@media screen and (max-width: 600px) {
+    /* lay Page */
+	.lay-fullpage {
+		margin-bottom: 10vh !important;
+	}
+
+	.lay-fullpage .word {
+		line-height: 2.6rem !important;
+	}
+	.mdl-layout__drawer-button {
+        color: #fff;
+    }
+	.background {
+		-webkit-filter: brightness(0.6);
+		filter: brightness(0.6);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		background-size: cover;
+	}
+}
+/* lay Page */
+.mdl-layout__drawer{
+	color: #fff;
+}
+.lay-fullpage {
+	position: relative;
+	color: white;
+	z-index: 1;
+	margin-top: 35vh;
+	margin-bottom: 35vh;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+}
+
+.lay-fullpage .bracket {
+	font-size: 30px;
+}
+
+.lay-fullpage .bracket.left {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.lay-fullpage .bracket.right {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+.lay-fullpage .word {
+	font-size: 1.3rem;
+	text-align: center;
+	line-height: 50px;
+	word-break: normal;
+	margin: 0;
+	padding: 15px 50px;
+}
+
+.lay-fullpage .author {
+	font-size: 10px;
+	color: rgba(255, 255, 255, 0.8);
+	float: right;
+	margin-top: 40px;
+}
+
+#footer {
+    position: fixed;
+    width:100%;
+    bottom: 5px;
+    right: 15px;
+    margin-bottom: 0px;
+    text-align: center;
+    z-index: 4;
+    color: white;
+    font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+}
+

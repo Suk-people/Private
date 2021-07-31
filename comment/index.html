@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title>网易云热评 - Suk</title>
+    <meta charset="UTF-8">
+    <meta name="baidu-site-verification" content="75ZDbeqwO1">
+    <link rel="icon" type="image/ico" href="https://suk.wiki/favicon.ico">
+    <meta name="description" content="网易云热评">
+    <meta name="keywords" content="DMX,suk.wiki">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://hotcomment.suk.wiki/css/12.css">
+    <link rel="stylesheet" href="http://hotcomment.suk.wiki/css/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="http://hotcomment.suk.wiki/css/style.css">
+    <link rel="stylesheet" href="http://hotcomment.suk.wiki/css/animate.min.css">
+    <link rel="stylesheet" href="http://hotcomment.suk.wiki/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://hotcomment.suk.wiki/css/APlayer.min.css">
+    <style>
+		.background{
+			position: fixed;
+		    z-index: -1;
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+		    max-width: none;
+		    background: top left no-repeat #666666;
+		    background-size: cover;
+		}
+		.aplayer-title{
+			color: #24292e;
+		}
+    </style>
+    <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+  </head>
+  <body style="position:absolute;">
+    <div class="background" id="background" style="background:url(&#x27;images/1934.jpeg&#x27;);">
+    </div>
+    <div class="mdl-layout mdl-js-layout fadeIn animated">
+      <!--banner-->
+      <header class="mdl-layout__header mdl-layout__header--scroll mdl-layout__header--transparent slideInDown animated" id="nav">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">
+          	网易云热评
+          </span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer">
+          </div>
+          <!-- Navigation -->
+          <nav class="mdl-navigation">
+            <!-- 天气 -->
+            <div id="tp-weather-widget" class="navbar-form navbar-form-sm navbar-left shift" align="center"></div>
+            <script>(function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.seniverse.com/widget/chameleon.js"))</script>
+            <script>
+              tpwidget("init", {
+                "flavor": "slim",
+                "location": "WX4FBXXFKE4F",
+                "geolocation": "enabled",
+                "language": "auto",
+                "unit": "c",
+                "theme": "black",
+                "container": "tp-weather-widget",
+                "bubble": "enabled",
+                "alarmType": "badge",
+                "color": "#00AFDB",
+                "uid": "UB7BEE62D3",
+                "hash": "3600ce1f732c2aa637f35517da5f7081"
+              });
+              tpwidget("show");
+            </script>
+            <!-- 天气结束 -->
+            <a id="music" class="mdl-navigation__link" href="javascript:;"><i class="mdui-icon material-icons">&#xe038;</i></a>
+            <a id="copy" class="mdl-navigation__link" href="javascript:;"><i class="mdui-icon material-icons">&#xe14d;</i></a>
+            <a id="ReLoadHot" class="mdl-navigation__link" href="javascript:;"><i class="mdui-icon material-icons">&#xe863;</i></a>
+            <a class="mdl-navigation__link" href="https://index.suk.wiki" target="_blank">Index</a>
+          </nav>
+        </div>
+      </header>
+      <!--sidebar-->
+      <div class="mdl-layout__drawer" align="center">
+        <span class="mdl-layout-title" id="chakhsu" style="color:#FF0000">
+        </span>
+        <nav class="mdl-navigation">
+            <a id="musics" class="mdl-navigation__link" href="javascript:;"><i class="mdui-icon material-icons">&#xe038;</i></a>
+            <a id="copys" class="mdl-navigation__link" href="javascript:;"><i class="mdui-icon material-icons">&#xe14d;</i></a>
+            <a id="ReLoadHots" class="mdl-navigation__link" href="javascript:;"><i class="mdui-icon material-icons">&#xe863;</i></a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+      	<div class="ver-video-cover"></div>
+        <div class="page-content">
+          <div class="lay-fullpage" id="cm">
+            <div class="bracket left">
+              『
+            </div>
+            <div class="word" id="comment_content">
+            	<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+            </div>
+            <div class="bracket right">
+              』
+            </div>
+            <div class="author" id="author">
+            	<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+	<style>
+    	#aplayer{
+    		display: none;
+    	}
+    	.ver-video-cover {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: 1000;
+        }
+    </style>
+	<div id="aplayer"></div>
+    <!--版权信息-->
+    <!--<p id="footer">Copyright © 2021 Suk</p>-->
+  </body>
+	<script src="http://hotcomment.suk.wiki/js/jquery.js"></script>
+	<script src="http://hotcomment.suk.wiki/js/fastclick.js"></script>
+	<script src="http://hotcomment.suk.wiki/js/sweetalert.min.js"></script>
+	<script src="http://hotcomment.suk.wiki/js/layer.js"></script>
+	<script src="http://hotcomment.suk.wiki/js/material.min.js"></script>
+	<script src="http://hotcomment.suk.wiki/js/fang.js"> </script>
+	<script src="http://hotcomment.suk.wiki/js/APlayer.min.js"> </script>
+    <script>
+	console.log("%c 禁止调试","color:#ffffff;background-color:#7266ba;padding:10px;border-radius:20px;");
+	(function noDebuger() {
+	    function testDebuger() {
+	        var d = new Date();
+	        debugger;
+	        if (new Date() - d > 10) {
+	            document.body.innerHTML = '<div style="padding-top:100px;;width: 100%;height: 50px;font-size: 30px;text-align: center;font-weight: bold;">禁止调试，你咋就这么好奇呢<br/><br/>BySuk</div>';
+	            return true;
+	        }
+	        return false;
+	    }
+	    function start() {
+	        while (testDebuger()) {
+	            testDebuger();
+	        }
+	    }
+	    if (!testDebuger()) {
+	        window.onblur = function () {
+	            setTimeout(function () {
+	                start();
+	            }, 500)
+	        }
+	    }else {
+	        start();
+	    }
+	})();
+    </script>
+	<script type="text/javascript" charset="utf-8">
+	var stop = false;
+	//APlayer调用
+	const ap = new APlayer({
+	    container: document.getElementById('aplayer'),
+	    fixed: true,
+	    audio: [{
+	    	name: "你的答案",
+	        artist: "阿冗",
+	        url: "https://music.163.com/song/media/outer/url?id=1400256289",
+	        cover: "https://p1.music.126.net/OlX-4S4L0Hdkyy_DQ27zag==/109951164459621658.jpg?param=250y250",
+	    }]
+	});
+	//APlayer调用
+	
+	//热评加载函数
+	function hot(){
+		$.ajax({
+			type: "get",
+			url: "https://api.gmit.vip/Api/HotComments",
+			timeout: 5000,   
+			async: true,  
+			beforeSend:function(){
+			    
+			},
+			complete:function(){
+			    $('#comment_content').addClass('flipInX animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+			      $(this).removeClass('flipInX animated');
+			    });
+			    $('#author').addClass('flipInX animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+			      $(this).removeClass('flipInX animated');
+			    });
+			},
+			error: function() {
+				swal({ title: "网络错误", text: "请刷新页面重试", icon: "error", buttons: false, timer: 3000, });
+				hot();
+			}, 
+			success: function(data) {
+				function getCaption(obj,state) {
+				    var index=obj.lastIndexOf("\=");
+				    if(state==0){
+				        obj=obj.substring(0,index);
+				    }else {
+				        obj=obj.substring(index+1,obj.length);
+				    }
+				    return obj;
+				}
+				$("#comment_content").text(data.data.text);
+				var author = "--来自网易云热评《"+data.data.name+"》";
+				$("#author").html(author);
+				ap.list.clear();
+				ap.list.add([{
+				    name: data.data.name,
+				    artist: data.data.author,
+				    url: data.data.mp3_url,
+				    cover: data.data.images,
+				}]);
+				ap.skipForward();
+				return hotdata = data,love = data.data.love,dataid = data.data.id,mp3_url = data.data.mp3_url,images = data.images,song_id = data.data.song_id;
+			}
+		}); 
+	}hot();
+	//热评加载函数
+	
+	//是否开启音乐
+	$(function(){
+		swal("是否开启音乐？", {
+	        buttons: {
+	            cancel: "关",
+	            allow: "开"
+	        }
+	    })
+	    .then(function (value) {
+	        if (value == "allow") {
+	        	$("#music").html('<i class="mdui-icon material-icons">&#xe035;</i>');
+	        	$("#musics").html('<i class="mdui-icon material-icons">&#xe035;</i>');
+	            ap.toggle();
+	            stop = false;
+	        }else{
+	        	$("#music").html('<i class="mdui-icon material-icons">&#xe038;</i>');
+	        	$("#musics").html('<i class="mdui-icon material-icons">&#xe038;</i>');
+	        	stop = true;
+	        }
+	    });
+	})
+	//是否开启音乐
+	
+	//换热评
+	$("#ReLoadHot").click(function(){
+		$('#ReLoadHot').addClass('heartBeat animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+	      $(this).removeClass('heartBeat animated');
+	    });
+	    stop = true;
+	    hot();
+	    $("#music").html('<i class="mdui-icon material-icons">&#xe038;</i>');
+	    $("#musics").html('<i class="mdui-icon material-icons">&#xe038;</i>');
+	});
+	$("#ReLoadHots").click(function(){
+		$('#ReLoadHots').addClass('heartBeat animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+	      $(this).removeClass('heartBeat animated');
+	    });
+	    stop = true;
+	    hot();
+	    $("#music").html('<i class="mdui-icon material-icons">&#xe038;</i>');
+	    $("#musics").html('<i class="mdui-icon material-icons">&#xe038;</i>');
+	});
+	$(".aplayer-icon-back").click(function(){
+		$('#ReHot').addClass('heartBeat animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+	      $(this).removeClass('heartBeat animated');
+	    });
+	    stop = true;
+	    hot();
+	    $("#music").html('<i class="mdui-icon material-icons">&#xe038;</i>');
+	    $("#musics").html('<i class="mdui-icon material-icons">&#xe038;</i>');
+	});
+	$(".aplayer-icon-forward").click(function(){
+		$('#ReHot').addClass('heartBeat animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+	      $(this).removeClass('heartBeat animated');
+	    });
+	    stop = true;
+	    hot();
+	    $("#music").html('<i class="mdui-icon material-icons">&#xe038;</i>');
+	    $("#musics").html('<i class="mdui-icon material-icons">&#xe038;</i>');
+	});
+	//换热评
+	
+	//播放关闭音乐
+	$("#music").click(function(){
+		$('#music').addClass('heartBeat animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+	      $(this).removeClass('heartBeat animated');
+	    });
+	    if(ap.audio.paused == true){
+	    	if(stop == true){
+		    	stop = false;
+		    }
+	    	$("#music").html('<i class="mdui-icon material-icons">&#xe035;</i>');
+	    	ap.toggle();
+	    }else{
+	    	if(stop == false){
+		    	stop = true;
+		    }
+	    	$("#music").html('<i class="mdui-icon material-icons">&#xe038;</i>');
+	    	ap.toggle();
+	    }
+	});
+	$("#musics").click(function(){
+		$('#musics').addClass('heartBeat animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+	      $(this).removeClass('heartBeat animated');
+	    });
+	    if(ap.audio.paused == true){
+	    	if(stop == true){
+		    	stop = false;
+		    }
+	    	$("#music").html('<i class="mdui-icon material-icons">&#xe035;</i>');
+	    	$("#musics").html('<i class="mdui-icon material-icons">&#xe035;</i>');
+	    	ap.toggle();
+	    }else{
+	    	if(stop == false){
+		    	stop = true;
+		    }
+	    	$("#music").html('<i class="mdui-icon material-icons">&#xe038;</i>');
+	    	$("#musics").html('<i class="mdui-icon material-icons">&#xe038;</i>');
+	    	ap.toggle();
+	    }
+	});
+	//播放关闭音乐
+	
+	//复制热评按钮
+	function copy(){
+	    var comment = $("#comment_content").text();
+        var author = $("#author").text();
+        var oInput = document.createElement('input');
+        oInput.value = comment+"\n——"+author;
+        document.body.appendChild(oInput);
+        oInput.select();
+        document.execCommand("Copy");
+        oInput.className = 'oInput';
+        oInput.style.display = 'none';
+        layer.msg('热评已复制~', function(){
+        //关闭后的操作
+        });
+	}
+	$("#copy").click(function(){
+		$('#copy').addClass('heartBeat animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+	      $(this).removeClass('heartBeat animated');
+	    });
+	    copy();
+	});
+	$("#copys").click(function(){
+		$('#copys').addClass('heartBeat animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+	      $(this).removeClass('heartBeat animated');
+	    });
+		copy();
+	});
+	//复制热评按钮
+	
+	setInterval(function(){
+	    if(stop == true){
+			image();
+	    }
+	},10000)
+	setInterval(function(){
+	    if(stop == true){
+			hot();
+	    }
+	},5000)
+	
+	//导航变色标题
+	var chakhsu = function (r) {function t() {return b[Math.floor(Math.random() * b.length)]}  function e() {return String.fromCharCode(94 * Math.random() + 33)}   function n(r) {for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {                 var l = document.createElement("span"); l.textContent = e(), l.style.color = t(), n.appendChild(l) }  return n} function i() {var t = o[c.skillI]; c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)  }   /*以下内容自定义修改*/   var l = "", o = ["网易云热评"].map(function (r) {return r + ""}),  a = 2, g = 1, s = 5, d = 75, b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"], c = {text: "", prefixP: -s, skillI: 0, skillP: 0, direction: "forward", delay: a, step: g}; i() }; chakhsu(document.getElementById('chakhsu'));
+	//导航变色标题
+	//(function() {var a = new Date(); debugger; console.log("请勿非法调试"); return new Date() - a > 100;}())
+	</script>
+</html>
